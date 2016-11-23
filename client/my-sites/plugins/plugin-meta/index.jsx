@@ -34,6 +34,8 @@ import {
 	isEnterprise
 } from 'lib/products-values';
 
+import PluginAutomatedTransfer from 'my-sites/plugins/plugin-automated-transfer';
+
 export default React.createClass( {
 	OUT_OF_DATE_YEARS: 2,
 
@@ -323,6 +325,10 @@ export default React.createClass( {
 						/>
 					}
 				</Card>
+
+				{ config.isEnabled( 'automated-transfer' ) && this.hasBusinessPlan() &&
+					<PluginAutomatedTransfer />
+				}
 
 				{ ( get( this.props.selectedSite, 'jetpack' ) || this.hasBusinessPlan() ) &&
 					<div style={ { marginBottom: 16 } } />
