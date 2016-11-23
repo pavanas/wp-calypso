@@ -247,12 +247,7 @@ export function isRequestingTheme( state, siteId, themeId ) {
  * @return {Boolean}        Whether request is in progress
  */
 export function isRequestingActiveTheme( state, siteId ) {
-	const activeThemeRequests = get( state, 'themes.activeThemeRequests', null );
-	if ( ! activeThemeRequests ) {
-		return false;
-	}
-
-	return get( activeThemeRequests, siteId, false );
+	return get( state.themes.activeThemeRequests, siteId, false );
 }
 
 /**
@@ -397,12 +392,7 @@ export function getThemeSignupUrl( state, theme ) {
  * @return {?String}         Theme ID
  */
 export function getActiveTheme( state, siteId ) {
-	const activeThemes = get( state, 'themes.activeThemes', null );
-	if ( ! activeThemes ) {
-		return null;
-	}
-
-	return get( activeThemes, siteId, null );
+	return get( state.themes.activeThemes, siteId, null );
 }
 
 /**
