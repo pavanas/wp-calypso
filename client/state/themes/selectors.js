@@ -394,7 +394,7 @@ export function getThemeSignupUrl( state, theme ) {
  *
  * @param  {Object}  state   Global state tree
  * @param  {Number}  siteId  Site ID
- * @return {?Stirng}          Theme ID
+ * @return {?String}         Theme ID
  */
 export function getActiveTheme( state, siteId ) {
 	const activeThemes = get( state, 'themes.activeThemes', null );
